@@ -30,6 +30,27 @@ public class MyReaderClass {
 				gender=input_array[2];
 				currency=input_array[3];
 				amount=input_array[4];
+				if(currency.equals("INR"))
+				{
+					currency="USD";
+					amount= Integer.toString((Integer.parseInt(amount)/66));
+				}
+				else if(currency.equals("GBP"))
+				{
+					currency="USD";
+					amount= Integer.toString(((Integer.parseInt(amount)*67)));
+				}
+				else if(currency.equals("HKD"))
+				{
+					currency="USD";
+					amount= Integer.toString((Integer.parseInt(amount)/8));
+				}
+				else if(currency.equals("SGD"))
+				{
+					currency="USD";
+					amount= Integer.toString(((Integer.parseInt(amount)/15)*10));
+				}
+				
 				input_dao ob= new input_dao(city, country, gender, currency, amount);
 				inputs.add(ob);
 			}
